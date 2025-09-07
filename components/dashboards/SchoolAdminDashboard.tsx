@@ -1,5 +1,5 @@
 import React from 'react';
-import { User } from '../types';
+import { User } from '../src/types';
 import Card from '../shared/Card';
 import UpgradeCard from './UpgradeCard';
 import UpgradePrompt from './UpgradePrompt';

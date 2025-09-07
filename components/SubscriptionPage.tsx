@@ -1,7 +1,7 @@
 import React from 'react';
 import Card from './shared/Card';
 import { subscriptionPlans, CheckIcon } from '../src/constants';
-import { SubscriptionPlan, User } from '../types';
+import { SubscriptionPlan, User } from '../src/types';
 import PaymentForm from './PaymentForm';
 
 interface SubscriptionPageProps {

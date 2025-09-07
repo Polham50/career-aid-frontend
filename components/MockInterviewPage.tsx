@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { InterviewQuestion } from '../types';
+import { InterviewQuestion } from '../src/types';
 import { getMockInterviewQuestions, getInterviewFeedback } from '../src/services/apiService';
 import Card from './shared/Card';
 import Spinner from './shared/Spinner';

@@ -1,6 +1,6 @@
 import React from 'react';
 import Card from './shared/Card';
-import { User } from '../types';
+import { User } from '../src/types';
 import { registerUser } from '../src/services/apiService';
 
 interface SignUpPageProps {

@@ -1,6 +1,6 @@
 import React from "react";
 import Card from "./shared/Card";
-import { SubscriptionPlan, User } from "../types";
+import { SubscriptionPlan, User } from "../src/types";
 import Spinner from "./shared/Spinner";
 import { getPaymentConfig, verifyPaystackPayment } from "../src/services/apiService";
 

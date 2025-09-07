@@ -1,5 +1,5 @@
 import React from 'react';
-import { CareerProfile, ChatMessage } from '../types';
+import { CareerProfile, ChatMessage } from '../src/types';
 import { getChatResponseStream } from '../src/services/apiService';
 import Card from './shared/Card';
 
