@@ -9,7 +9,7 @@
     "strict": true,
     "skipLibCheck": true,
     "jsx": "react-jsx",
-    "types": ["node", "react", "react-dom"],
+  "types": ["node", "react", "react-dom"],
   // Removed typeRoots to allow default JSX type resolution
   },
   "include": ["**/*.ts", "**/*.tsx", "src/types/**/*.d.ts"],
