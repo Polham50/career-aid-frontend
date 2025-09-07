@@ -1,5 +1,5 @@
 import React from 'react';
-import { CareerProfile, Career } from '../types';
+import { CareerProfile, Career } from '../src/types';
 import Card from './shared/Card';
 import { HOLLAND_CODE_ICONS } from '../src/constants';
 
@@ -11,7 +11,7 @@ const ResultsPage: React.FC<ResultsPageProps> = ({ profile }) => {
   const renderFormattedText = (text: string) => {
     if (!text) return null;
     const parts = text.split(/(\*\*.*?\*\*)/g);
-    return parts.map((part, i) =>
+    return parts.map((part: string, i: number) =>
       part.startsWith('**') && part.endsWith('**') ? (
         <strong key={i} className="font-semibold text-gray-800">{part.slice(2, -2)}</strong>
       ) : (
@@ -34,7 +34,7 @@ const ResultsPage: React.FC<ResultsPageProps> = ({ profile }) => {
              <h3 className="text-xl font-semibold text-cyan-600 mb-3">Your Personality Type Summary</h3>
             <p className="text-gray-600">{renderFormattedText(profile.summary)}</p>
             <div className="mt-6 grid grid-cols-1 md:grid-cols-3 gap-4 text-center">
-              {(profile.topHollandCodes || []).map((code) => (
+              {(profile.topHollandCodes || []).map((code: any) => (
                 <div key={code.code} className="bg-gray-100 p-4 rounded-lg">
                   <div className="flex items-center justify-center text-cyan-500 mb-2">
                     {HOLLAND_CODE_ICONS[code.code]}
@@ -64,7 +64,7 @@ const ResultsPage: React.FC<ResultsPageProps> = ({ profile }) => {
                       <div>
                         <h5 className="font-semibold mb-2 text-gray-800">Top Skills Needed:</h5>
                         <div className="flex flex-wrap gap-2">
-                          {(career.requiredSkills || []).map((skill, i) => (
+                          {(career.requiredSkills || []).map((skill: string, i: number) => (
                             <span key={i} className="bg-cyan-100 text-cyan-800 text-xs font-medium px-2.5 py-1 rounded-full">{skill}</span>
                           ))}
                         </div>
@@ -74,7 +74,7 @@ const ResultsPage: React.FC<ResultsPageProps> = ({ profile }) => {
                         <h5 className="font-semibold mb-2 text-gray-800">Academic Recommendations:</h5>
                         {career.courseRecommendations && career.courseRecommendations.length > 0 ? (
                             <div className="space-y-4">
-                                {career.courseRecommendations.map((course, i) => (
+                                {career.courseRecommendations.map((course: any, i: number) => (
                                     <div key={i} className="p-3 bg-gray-50 rounded-lg border border-gray-200">
                                         <h6 className="font-semibold text-gray-800">{course.courseName}</h6>
                                         <ul className="mt-2 text-sm text-gray-600 list-disc list-inside space-y-1">
@@ -85,7 +85,7 @@ const ResultsPage: React.FC<ResultsPageProps> = ({ profile }) => {
                                         <div className="mt-3">
                                             <p className="text-sm font-medium text-gray-800 mb-1.5">Institutions:</p>
                                             <div className="flex flex-wrap gap-2">
-                                              {(course.institutions || []).map((inst, j) => (
+                                              {(course.institutions || []).map((inst: string, j: number) => (
                                                 <span key={j} className="bg-gray-200 text-gray-700 text-xs font-medium px-2.5 py-1 rounded-full">{inst}</span>
                                               ))}
                                             </div>
