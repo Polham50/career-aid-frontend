@@ -80,7 +80,7 @@ const PaymentForm: React.FC<PaymentFormProps> = ({
 
     try {
       // Lazy-load Paystack only when needed
-      const { default: PaystackPop } = await import("@paystack/inline-js");
+  const { default: PaystackPop } = await import("@paystack/inline-js");
       const paystack = new PaystackPop();
 
       paystack.newTransaction({

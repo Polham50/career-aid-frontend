@@ -1,5 +1,5 @@
 import React from 'react';
-import { User, CareerProfile } from '../types';
+import { User, CareerProfile } from '../src/types';
 import StudentDashboard from './dashboards/StudentDashboard';
 import ParentDashboard from './dashboards/ParentDashboard';
 import TeacherDashboard from './dashboards/TeacherDashboard';
