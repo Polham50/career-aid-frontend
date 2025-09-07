@@ -46,7 +46,7 @@ const Header: React.FC<HeaderProps> = ({ user, onLogoClick, onSignUp, onLogin, o
           className="flex items-center space-x-3 cursor-pointer"
           onClick={onLogoClick}
         >
-          <img src="/public/assets/logo.png" alt="CareerAid Clinic Logo" className="h-8 w-auto" />
+          <img src="/assets/logo.png" alt="CareerAid Clinic Logo" className="h-8 w-auto" />
           <span className="text-xl font-bold text-white">CareerAid Clinic</span>
         </div>
         <div className="flex items-center space-x-4">

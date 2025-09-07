@@ -56,7 +56,7 @@ const HomePage: React.FC<HomePageProps> = ({ onStart }) => {
   return (
     <div className="relative w-full space-y-20 md:space-y-28 mb-24 overflow-hidden">
         <div className="absolute inset-0 z-0 flex items-center justify-center opacity-5 pointer-events-none">
-            <img src="/public/assets/logo.png" alt="background logo" className="w-2/3 md:w-1/2 h-auto" />
+            <img src="/assets/logo.png" alt="background logo" className="w-2/3 md:w-1/2 h-auto" />
         </div>
 
       {/* Hero Section */}

@@ -22,7 +22,7 @@ const Footer: React.FC = () => {
                     {/* Column 1: Logo and mission */}
                     <div className="lg:col-span-1">
                         <div className="flex items-center space-x-3">
-                            <img src="/public/assets/logo.png" alt="CareerAid Clinic Logo" className="h-8 w-auto" />
+                            <img src="/assets/logo.png" alt="CareerAid Clinic Logo" className="h-8 w-auto" />
                             <span className="text-xl font-bold text-white">CareerAid Clinic</span>
                         </div>
                         <p className="mt-4 text-sm text-gray-400">Smart choices, brighter tomorrow!</p>
