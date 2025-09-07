@@ -1,7 +1,7 @@
 import React from 'react';
 import { CareerProfile, Career } from '../types';
 import Card from './shared/Card';
-import { HOLLAND_CODE_ICONS } from '../src/constants.tsx';
+import { HOLLAND_CODE_ICONS } from '../src/constants;
 
 interface ResultsPageProps {
   profile: CareerProfile;

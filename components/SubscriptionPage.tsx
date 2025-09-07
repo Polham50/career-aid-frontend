@@ -1,6 +1,6 @@
 import React from 'react';
 import Card from './shared/Card';
-import { subscriptionPlans, CheckIcon } from '../src/constants.tsx';
+import { subscriptionPlans, CheckIcon } from '../src/constants';
 import { SubscriptionPlan, User } from '../types';
 import PaymentForm from './PaymentForm';
 

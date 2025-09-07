@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { ASSESSMENT_QUESTIONS } from '../src/constants.tsx';
+import { ASSESSMENT_QUESTIONS } from '../src/constants';
 import Card from './shared/Card';
 
 interface AssessmentPageProps {

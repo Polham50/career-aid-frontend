@@ -1,5 +1,5 @@
 import React from 'react';
-import { User, CareerProfile } from '../../types';
+import { User, CareerProfile } from '../types';
 import ResultsPage from '../ResultsPage';
 import Card from '../shared/Card';
 import AssessmentPage from '../AssessmentPage';

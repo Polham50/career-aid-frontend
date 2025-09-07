@@ -1,11 +1,11 @@
 import React from 'react';
-import { User, CareerProfile } from '../../types';
+import { User, CareerProfile } from '../types';
 import ResultsPage from '../ResultsPage';
 import Card from '../shared/Card';
 import AssessmentPage from '../AssessmentPage';
 import Chatbot from '../Chatbot';
 import UpgradeCard from './UpgradeCard';
-  import { HOLLAND_CODE_ICONS } from '../../src/constants.tsx';
+  import { HOLLAND_CODE_ICONS } from '../../src/constants';
 import UpgradePrompt from './UpgradePrompt';
 
 interface StudentDashboardProps {
