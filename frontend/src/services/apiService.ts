@@ -6,7 +6,7 @@ import { CareerProfile, ChatMessage, InterviewQuestion, User } from '../types';
 // To find your IP:
 // - Windows: `ipconfig` in Command Prompt
 // - Mac/Linux: `ifconfig` or `ip addr` in Terminal
-const API_BASE_URL = 'https://career-aid-backend.onrender.com/api';
+const API_BASE_URL = 'http://localhost:3001/api';
 
 export interface ChildData {
   _id: string;
