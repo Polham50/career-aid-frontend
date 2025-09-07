@@ -1,0 +1,29 @@
+import { jsx as _jsx, jsxs as _jsxs, Fragment as _Fragment } from "react/jsx-runtime";
+import React from 'react';
+import NotificationPanel from './NotificationPanel';
+const ProfileIcon = () => _jsx("svg", { xmlns: "http://www.w3.org/2000/svg", className: "h-5 w-5", fill: "none", viewBox: "0 0 24 24", stroke: "currentColor", children: _jsx("path", { strokeLinecap: "round", strokeLinejoin: "round", strokeWidth: 2, d: "M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" }) });
+const UpgradeIcon = () => _jsx("svg", { xmlns: "http://www.w3.org/2000/svg", className: "h-5 w-5", fill: "none", viewBox: "0 0 24 24", stroke: "currentColor", children: _jsx("path", { strokeLinecap: "round", strokeLinejoin: "round", strokeWidth: 2, d: "M5 11l7-7 7 7M5 19l7-7 7 7" }) });
+const WelcomeIcon = () => _jsx("svg", { xmlns: "http://www.w3.org/2000/svg", className: "h-5 w-5", fill: "none", viewBox: "0 0 24 24", stroke: "currentColor", children: _jsx("path", { strokeLinecap: "round", strokeLinejoin: "round", strokeWidth: 2, d: "M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" }) });
+const mockNotifications = [
+    { id: 1, icon: _jsx(WelcomeIcon, {}), title: "Welcome to CareerAid Clinic!", description: "Your account has been successfully created. Take the assessment to get started.", timestamp: "5m ago", read: false },
+    { id: 2, icon: _jsx(UpgradeIcon, {}), title: "Unlock Your Full Potential", description: "Upgrade to a premium plan to access unlimited assessments and custom roadmaps.", timestamp: "2h ago", read: false },
+    { id: 3, icon: _jsx(ProfileIcon, {}), title: "Your Profile is Ready!", description: "Your career profile has been generated. View your recommendations now.", timestamp: "1d ago", read: true },
+];
+const Header = ({ user, onLogoClick, onSignUp, onLogin, onLogout }) => {
+    const [isNotificationOpen, setIsNotificationOpen] = React.useState(false);
+    const notificationRef = React.useRef(null);
+    React.useEffect(() => {
+        const handleClickOutside = (event) => {
+            if (notificationRef.current && !notificationRef.current.contains(event.target)) {
+                setIsNotificationOpen(false);
+            }
+        };
+        document.addEventListener("mousedown", handleClickOutside);
+        return () => {
+            document.removeEventListener("mousedown", handleClickOutside);
+        };
+    }, []);
+    const unreadCount = mockNotifications.filter(n => !n.read).length;
+    return (_jsx("header", { className: "w-full py-4 px-6 bg-gray-900/80 backdrop-blur-sm border-b border-gray-700 sticky top-0 z-50", children: _jsxs("div", { className: "container mx-auto flex items-center justify-between", children: [_jsxs("div", { className: "flex items-center space-x-3 cursor-pointer", onClick: onLogoClick, children: [_jsx("img", { src: "/public/assets/logo.png", alt: "CareerAid Clinic Logo", className: "h-8 w-auto" }), _jsx("span", { className: "text-xl font-bold text-white", children: "CareerAid Clinic" })] }), _jsx("div", { className: "flex items-center space-x-4", children: user ? (_jsxs(_Fragment, { children: [_jsxs("div", { className: "relative group", children: [_jsxs("button", { className: "flex items-center space-x-1 text-gray-300 hover:text-white", children: [_jsx("svg", { xmlns: "http://www.w3.org/2000/svg", className: "h-5 w-5", fill: "none", viewBox: "0 0 24 24", stroke: "currentColor", children: _jsx("path", { strokeLinecap: "round", strokeLinejoin: "round", strokeWidth: 2, d: "M3 5h12M9 3v2m4 16l4-4m0 0l4 4m-4-4v12" }) }), _jsx("span", { children: "EN" })] }), _jsxs("div", { className: "absolute right-0 mt-2 w-28 bg-gray-800 border border-gray-700 rounded-md shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-200 invisible group-hover:visible", children: [_jsx("a", { href: "#", className: "block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700", children: "English" }), _jsx("a", { href: "#", className: "block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700", children: "Yoruba" }), _jsx("a", { href: "#", className: "block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700", children: "Hausa" }), _jsx("a", { href: "#", className: "block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700", children: "Igbo" })] })] }), _jsxs("div", { className: "relative", ref: notificationRef, children: [_jsxs("button", { onClick: () => setIsNotificationOpen(prev => !prev), className: "relative text-gray-300 hover:text-white", children: [_jsx("svg", { xmlns: "http://www.w3.org/2000/svg", className: "h-6 w-6", fill: "none", viewBox: "0 0 24 24", stroke: "currentColor", children: _jsx("path", { strokeLinecap: "round", strokeLinejoin: "round", strokeWidth: 2, d: "M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" }) }), unreadCount > 0 && _jsx("span", { className: "absolute -top-1 -right-1 flex h-4 w-4 items-center justify-center rounded-full bg-red-500 text-xs text-white ring-2 ring-gray-900", children: unreadCount })] }), isNotificationOpen && _jsx(NotificationPanel, { notifications: mockNotifications, onClose: () => setIsNotificationOpen(false) })] }), _jsxs("span", { className: "text-gray-300 hidden sm:block", children: ["Welcome, ", user.name.split(' ')[0], "!"] }), _jsx("button", { onClick: onLogout, className: "bg-gray-600 text-white font-semibold px-4 py-2 rounded-lg hover:bg-gray-700 transition-colors duration-200", children: "Logout" })] })) : (_jsxs(_Fragment, { children: [_jsx("button", { onClick: onLogin, className: "text-gray-300 hover:text-white transition-colors duration-200", children: "Login" }), _jsx("button", { onClick: onSignUp, className: "bg-cyan-600 text-white font-semibold px-4 py-2 rounded-lg hover:bg-cyan-700 transition-colors duration-200", children: "Sign Up" })] })) })] }) }));
+};
+export default Header;
